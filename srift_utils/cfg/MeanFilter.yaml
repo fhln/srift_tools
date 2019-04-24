@@ -1,0 +1,4 @@
+FifthOrder:
+  name: my_filter
+  type: MultiChannelMeanFilterDouble
+  params: {number_of_observations: 5}

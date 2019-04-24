@@ -1,0 +1,19 @@
+<launch>
+  
+
+
+ 
+  
+  <!-- publish the robot state (tf transforms) -->
+  <param name="publish_frequency" value="500.0" type="double" />
+ <!-- <node pkg="tf" type="static_transform_publisher" name="srift_broadcaster" args="0 0 0.019 -1.57079 0 0  tool0  srift 500" />-->
+
+<!--  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />-->
+
+  
+  <node name="srift_force_utils" pkg="srift_utils" type="netft_utils" respawn="false" output="screen" >
+    <rosparam file="$(find srift_utils)/cfg/MeanFilter.yaml" command="load" />
+    <rosparam file="$(find srift_utils)/cfg/100.yaml" command="load" />
+  </node>
+
+</launch>

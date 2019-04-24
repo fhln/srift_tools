@@ -1,0 +1,29 @@
+isFilterOn: true
+deltaTFilter: 0.0005
+cutoffFrequency: 500
+newFilter: true
+isBiased: true
+isNewGravityBias: false
+forceMaxB: 250.0
+torqueMaxB: 14.0
+forceMaxU: 260.0
+torqueMaxU: 16.0
+payloadWeight: 0.0
+payloadLeverArm: 0.0 #deal with gravity compensation
+
+biasForceX: 0.0
+biasForceY: 0.0
+biasForceZ: 0.0
+biasTorqueX: 0.0
+biasTorqueY: 0.0
+biasTorqueZ: 0.0
+
+ft_frame: ft_frame
+world_frame: base_link
+
+useCfgFile: true # use this file
+ftTopic: /srift/srift_data #if have this topic, subscribe this instead of start driver node
+ftAddress: 192.168.0.110
+
+ownFilterOn: true
+FilterSequenceCount: 20

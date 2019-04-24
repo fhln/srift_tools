@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+        <arg  name="ip_address"  default="192.168.0.110"/>
+	<arg  name="bias"	 default="False"/>
+	<arg  name="rate" 	 default="1000"/>	
+	<arg  name="frame_id"    default="myframe"/>
+	<arg  name="alpha"	 default="0" />	
+	<arg  name="rot"	 default="0"/>
+	<arg  name="scale_x"	 default="1"/>
+	<arg  name="scale_y"	 default="1"/>
+	<arg  name="scale_z"	 default="1"/>
+  <arg  name="wrench"	 default="False"/>
+  <arg  name="sensor_type" default="100"/>
+
+
+	<group ns="ft_sensor">
+		<param name="frame_id" type="str" value="$(arg frame_id)"/>
+    <param name="sensor_type" type="str" value="$(arg sensor_type)"/>
+		<node name="force_torque_sensor" pkg="srift_driver" type="srift_node" 
+		    args="--address $(arg ip_address) --rate $(arg rate) --bias $(arg bias) --rot $(arg rot) --alpha $(arg alpha) --scale_x $(arg scale_x) --scale_y $(arg scale_y) --scale_z $(arg scale_z)" 
+			 required="true" output="screen"/>
+	</group>
+
+</launch>
